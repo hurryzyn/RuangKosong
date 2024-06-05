@@ -1,107 +1,50 @@
-  <!DOCTYPE html>
+<?php
+require "inc.koneksi.php";
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <img src="ruangk.png" alt="Logo" width="50" height="50">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Find a Space</a></li>
-                <li><a href="#">Lease a Space</a></li>
-            </ul>
-        </nav>
-        <div class="logout">
-            <a href="#">Logout</a>
+    <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2">Features</a></li>
+        <li><a href="#" class="nav-link px-2">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2">About</a></li>
+      </ul>
+
+      <div class="dropdown text-end">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
         </div>
     </header>
+  </div>
 
-    <div class="form-container">
-        <form action="#" method="GET" class="search-form">
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" placeholder="Enter location">
-            </div>
-            <div class="form-group">
-                <label for="building">Building:</label>
-                <input type="text" id="building" name="building" placeholder="Enter building">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-            <p class="jargon">Find Space - Find all locations in Jakarta</p>
-        </form>
-    </div>
-    
-    <div class="location-recommendation">
-        <h2>Location Recommendation</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="image1.jpeg" alt="Image 1">
-                <div class="overlay">
-                    <p>Start from:</p>
-                    <p class="price">Rp 100.000,-</p>
-                </div>
-                <div class="place-name">
-                    <p>Kemang</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="image2.jpeg" alt="Image 2">
-                <div class="overlay">
-                    <p>Start from:</p>
-                    <p class="price">Rp 100.000,-</p>
-                </div>
-                <div class="place-name">
-                    <p>Kuningan</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="image3.jpeg" alt="Image 3">
-                <div class="overlay">
-                    <p>Start from:</p>
-                    <p class="price">Rp 100.000,-</p>
-                </div>
-                <div class="place-name">
-                    <p>SCBD</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="image4.jpeg" alt="Image 4">
-                <div class="overlay">
-                    <p>Start from:</p>
-                    <p class="price">Rp 100.000,-</p>
-                </div>
-                <div class="place-name">
-                    <p>Serpong</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="footer-left">
-            <p>Contact</p>
-            <p>08123456789</p>
-            <p>ruangkosong@gmail.com</p>
-            <p>jakarta selatan, kebayoran</p>
-        </div>
-        <div class="footer-right">
-            <div class="social-media">
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="fb.png" alt="Facebook"></a>
-                <a href="#"><img src="ig.png" alt="Instagram"></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright &copy; 2024, Ruangkosong.</p>
-        </div>
-    </footer>
-    
+    </header>
 
 </body>
+
 </html>
