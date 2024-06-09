@@ -1,21 +1,4 @@
-.navbar-nav .nav-link {
-    margin-right: 10px;
-}
-
-header {
-    height: 400px;
-}
-.header-custom {
-    background-image: url('/Ruangkosong/Asset/pageutama.jpg');
-    /* background-color: aquamarine; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.about{
-    margin-top: 80px;
-}
-.body-login {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -23,13 +6,13 @@ header {
     background-size: cover;
 }
 
-.header-login {
+header {
     background-color: rgba(240, 240, 240, 0.8);
     padding: 1em;
     text-align: center;
 }
 
-.nav-login ul {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -39,25 +22,25 @@ header {
     gap: 20px;
 }
 
-.nav-login ul .logo {
+nav ul .logo {
     margin-right: auto; /* Pushes other items to the right */
 }
 
-.nav-login ul .logo img {
+nav ul .logo img {
     height: 40px; /* Adjust the height as needed */
 }
 
-.nav-login a {
+nav a {
     text-decoration: none;
     color: #333;
     padding: 10px 15px; /* Added padding for better spacing */
 }
 
-.nav-login a:hover {
+nav a:hover {
     color: #555;
 }
 
-.main-login {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +48,7 @@ header {
     padding: 2em;
 }
 
-.section-login {
+section {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 2em;
     border: 1px solid #ddd;
@@ -75,17 +58,17 @@ header {
     text-align: center;
 }
 
-.h1-login {
+h1 {
     margin-top: 0;
 }
 
-.form-login {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.input-email {
+input[type="email"] {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -93,7 +76,7 @@ header {
     width: 100%;
 }
 
-.btn-login {
+button {
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
@@ -103,7 +86,7 @@ header {
     width: 100%;
 }
 
-.btn-login:hover {
+button:hover {
     background-color: #555;
 }
 
@@ -130,16 +113,16 @@ header {
     background-color: #f0f0f0;
 }
 
-.p-login {
+p {
     font-size: 12px;
     color: #666;
 }
 
-.p-login a {
+p a {
     color: #333;
     text-decoration: none;
 }
 
-.p-login a:hover {
+p a:hover {
     text-decoration: underline;
 }
