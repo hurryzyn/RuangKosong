@@ -18,13 +18,13 @@
             foreach ($arrayResult as $objofficespace) {
                 echo '<div class="col-sm-6">';
                 echo '  <div class="card my-3">';
-                echo '    <img src="./uploads/'.$objofficespace->foto.'" alt="thumbnail" class="card-img-top"/>';
+                echo '    <img src="'.$objofficespace->foto.'" alt="thumbnail" class="card-img-top"/>';
                 echo '    <div class="card-body">';
                 echo '      <h5 class="card-title">'.$objofficespace->nama_gedung.'</h5>';
                 echo '      <p class="card-text">'.$objofficespace->deskripsi.'</p>';
-                echo '      <p class="card-text fw-bold text-danger">From IDR '.number_format($objofficespace->harga, 0, ',', '.').'/m</p>';
+                echo '      <p class="card-text fw-bold text-danger">From IDR '.number_format($objofficespace->harga, 0, ',', '.').'/month</p>';
                 echo '      <div class="d-grid gap-2 col-6 mx-auto">';
-                echo '        <a href="index.php?coworkingH='.$objofficespace->id_gedung.'" class="btn btn-success">Book Now</a>';
+                echo '        <a href="index.php?='.$objofficespace->id_gedung.'" class="btn btn-success">Book Now</a>';
                 echo '      </div>';
                 echo '    </div>';
                 echo '  </div>';

@@ -28,7 +28,7 @@ class officespace extends Connection
     public function AddGedung()
     {
         $sql = "INSERT INTO tbl_gedung (id_gedung, nama_gedung,harga,lokasi,kapasitas,deskripsi,foto)
-                VALUES ('$this->id_gedung','$this->nama_gedung','$this->harga','$this->lokasi','$this->kapasitas','$this->deskripsi' '$this->foto')";
+                VALUES ('$this->id_gedung','$this->nama_gedung','$this->harga','$this->lokasi','$this->kapasitas','$this->deskripsi', '$this->foto')";
 
         $this->hasil = mysqli_query($this->connection, $sql);
         if ($this->hasil)
