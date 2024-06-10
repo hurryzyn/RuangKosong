@@ -66,7 +66,7 @@ class coworking extends Connection
             $this->message = 'Data gagal dihapus!';
     }
 
-    public function SelectCoworking()
+    public function SelectAllCoworking()
     {
         $sql = "SELECT * FROM tbl_coworking";
         $result = mysqli_query($this->connection, $sql);

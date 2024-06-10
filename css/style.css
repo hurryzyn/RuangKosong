@@ -143,3 +143,7 @@ header {
 .p-login a:hover {
     text-decoration: underline;
 }
+
+.about{
+    margin-bottom: 50px;
+}
