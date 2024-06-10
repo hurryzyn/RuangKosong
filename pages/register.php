@@ -16,9 +16,6 @@
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="name" placeholder="Enter your name">
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="address" placeholder="Enter your address">
-                            </div>
                             <div class="d-grid gap-2">
                                 <button class="btn btn-primary" type="button">Register</button>
                                 <div class="form-text text-center">Have an account?</div>
