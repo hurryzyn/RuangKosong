@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2024 pada 07.15
+-- Waktu pembuatan: 10 Jun 2024 pada 08.31
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `ruangkosong`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `book`
+--
+
+CREATE TABLE `book` (
+  `id_book` int(11) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `id_gedung` varchar(5) NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,6 +66,13 @@ CREATE TABLE `tbl_gedung` (
   `foto` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `tbl_gedung`
+--
+
+INSERT INTO `tbl_gedung` (`id_gedung`, `nama_gedung`, `harga`, `lokasi`, `kapasitas`, `deskripsi`, `foto`) VALUES
+('G00', 'SpaceWork', 500000, 'pams', '500orang', 'enaks bangs ', '/upload/ig.png');
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +90,12 @@ CREATE TABLE `user` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `book`
+--
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`id_book`);
 
 --
 -- Indeks untuk tabel `tbl_coworking`
@@ -92,6 +118,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `book`
+--
+ALTER TABLE `book`
+  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
