@@ -26,8 +26,8 @@ class User extends Connection
 
     public function AddUser()
     {
-        $sql = "INSERT INTO user(email, password, name ,role)
-        values ('$this->email', '$this->password', '$this->name', '$this->role')";
+        $sql = "INSERT INTO user (email, password, nama ,role)
+        values ('$this->email', '$this->password', '$this->nama', '$this->role')";
         
         $this->hasil = mysqli_query($this->connection, $sql);
         if ($this->hasil)

@@ -3,8 +3,8 @@ require_once('./class/class.user.php');
 
 if(isset($_POST['btnSubmit'])){
     $inputemail = $_POST["email"];
-    $objPengguna = new Pengguna();
-    $objPengguna->ValidasiEmail($inputemail);
+    $objPengguna = new User();
+    $objPengguna->ValidateEmail($inputemail);
 
     if($objPengguna->hasil){
         echo "<script>alert('Email sudah terdaftar');</script>";
@@ -13,7 +13,7 @@ if(isset($_POST['btnSubmit'])){
         $objPengguna->password = $_POST['password']; // Menggunakan nilai password mentah
         $objPengguna->nama = $_POST["name"];
         
-        $objPengguna->TambahPengguna();
+        $objPengguna->AddUser();
         if($objPengguna->hasil){
             echo "<script>alert('Registrasi berhasil');</script>";
             echo '<script>window.location="index.php?p=login";</script>';
