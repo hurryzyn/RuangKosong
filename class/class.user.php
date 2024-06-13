@@ -4,7 +4,7 @@ class User extends Connection
     private $userid = 0;
     private $email = '';
     private $password = '';
-    private $name = '';
+    private $nama = '';
     private $role = '';
     private $emp;
 
@@ -49,9 +49,16 @@ class User extends Connection
             $data = mysqli_fetch_assoc($result);
             $this->userid = $data['userid'];
             $this->password = $data['password'];
-            $this->name = $data['name'];
+            $this->nama = $data['nama'];
             $this->email = $data['email'];
             $this->role = $data['role'];
         }
+    }
+
+    public function getAllUser(){
+        $sql = "SELECT * FROM user";
+        $result = mysqli_query($this->connection, $sql);
+
+        return $result;
     }
 }

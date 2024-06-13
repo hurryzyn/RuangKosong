@@ -10,9 +10,10 @@ if(isset($_POST['btnSubmit'])){
         echo "<script>alert('Email sudah terdaftar');</script>";
     } else {
         $objPengguna->email = $_POST["email"];
-        $objPengguna->password = $_POST['password']; // Menggunakan nilai password mentah
-        $objPengguna->nama = $_POST["name"];
-        
+        $password = $_POST['password']; // Menggunakan nilai password mentah
+        $objPengguna->password= password_hash($password, PASSWORD_DEFAULT);
+        $objPengguna->nama = $_POST["nama"];
+        $objPengguna->role = "user";
         $objPengguna->AddUser();
         if($objPengguna->hasil){
             echo "<script>alert('Registrasi berhasil');</script>";
@@ -41,7 +42,7 @@ if(isset($_POST['btnSubmit'])){
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password Anda">
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda">
+                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda">
                             </div>
                             
                             <div class="d-grid gap-2">
