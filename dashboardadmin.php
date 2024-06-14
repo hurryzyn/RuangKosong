@@ -48,10 +48,10 @@ if ($selectedMenu == "home"){
       <td>' . $row[4] . '</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="dashboardadmin.php?page=editbook&id=" class="btn btn-primary btn-sm">
+          <a href="dashboardadmin.php?page=edituser&id=' . $row[0] . '" class="btn btn-primary btn-sm">
             <img src="./icons/edit.png" style="width: 20px" />
           </a>
-          <a href="#" class="btn btn-primary btn-sm">
+          <a href="dashboardadmin.php?page=deleteuser&id=' . $row[0] . '" class="btn btn-primary btn-sm">
             <img src="./icons/delete.png" style="width: 20px" />
           </a>
         </div>
@@ -74,10 +74,10 @@ if ($selectedMenu == "home"){
       <td>' . $row[5] . '</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="#" class="btn btn-primary btn-sm">
+          <a href="dashboardadmin.php?page=editbook&bid='.$row[0].'&gid='.$row[1].'&uid='.$row[6].'&status='.$row[5].'" class="btn btn-primary btn-sm">
             <img src="./icons/edit.png" style="width: 20px" />
           </a>
-          <a href="#" class="btn btn-primary btn-sm">
+          <a href="dashboardadmin.php?page=deletebook&bid='.$row[0].'" class="btn btn-primary btn-sm">
             <img src="./icons/delete.png" style="width: 20px" />
           </a>
         </div>
@@ -237,7 +237,7 @@ if (!empty($_GET['page'])) {
             $page_dir = 'pagesadmin';
             if (!empty($_GET['page'])) { 
               // NOTE: SEBELUM BIKIN FILE BARU, DAFTARIN NAMA FILE DISINI
-              $adminPages = ["addbook","editbook", "logout"];
+              $adminPages = ["addbook", "logout", "edituser", "deleteuser", "editbook", "deletebook"];
               $pageName = $_GET['page'];
               if (in_array($pageName, $adminPages)) {
                 require_once("./pagesadmin/". $pageName . ".php");

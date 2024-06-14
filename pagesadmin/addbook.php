@@ -36,8 +36,6 @@ $optionUser = "";
 while ($row = $allUserData->fetch_row()) {
     $currentData = '<option value="' . $row[0] . '">' . $row[3] . '</option>';
     $optionUser = $optionUser . $currentData;
-    // print_r($row);
-    //     echo "<br>";
 }
 
 ?>
