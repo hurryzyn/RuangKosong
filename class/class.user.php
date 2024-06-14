@@ -62,6 +62,7 @@ class User extends Connection
         return $result;
     }
 
+<<<<<<< HEAD
     public function getOneUser()
 {
     $sql = "SELECT * FROM user WHERE userid='$this->userid'";
@@ -77,4 +78,38 @@ class User extends Connection
     }
 }
 
+=======
+    public function getUserById($userId){
+        $sql = "SELECT * FROM user where userid = " . $userId;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) == 1) {
+            $this->hasil = true;
+            $data = mysqli_fetch_assoc($result);
+            $this->userid = $data['userid'];
+            $this->password = $data['password'];
+            $this->nama = $data['nama'];
+            $this->email = $data['email'];
+            $this->role = $data['role'];
+        }
+    }
+
+    public function editUser($name, $email, $password, $role, $userId){
+        
+        $sql = "UPDATE user SET nama = '".$name."', email = '".$email."', password = '".$password."', role = '".$role."' WHERE userid = ".$userId;
+        $this->hasil = mysqli_query($this->connection, $sql);
+        if ($this->hasil)
+            $this->message = 'Data berhasil ditambahkan!';
+        else
+            $this->message = 'Data gagal ditambahkan!';
+    }
+
+    public function deletUserById($id) {
+        $sql = "DELETE FROM user WHERE userid = ".$id;
+        $this->hasil = mysqli_query($this->connection, $sql);
+        if ($this->hasil)
+            $this->message = 'Data berhasil ditambahkan!';
+        else
+            $this->message = 'Data gagal ditambahkan!';
+    }
+>>>>>>> 6f9dcac27c687b3f1862d3e513191deb5859de04
 }
