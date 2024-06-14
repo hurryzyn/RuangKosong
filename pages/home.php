@@ -7,6 +7,8 @@
             berbagai kebutuhan dengan fokus pada fleksibilitas dan kemudahan akses.
             Visi Ruang Kosong adalah menjadi platform penyewaan ruang terdepan yang memfasilitasi kebutuhan ruang untuk semua jenis aktivitas, dari bisnis hingga kreatif, dengan menyediakan 
             akses mudah dan pilihan beragam. Misinya adalah memberikan solusi ruang yang fleksibel dan terjangkau bagi semua orang, serta mendukung produktivitas dan kreativitas dengan menyediakan ruang yang tepat untuk setiap kebutuhan.
+
+            awwwwwwwwwwww
             </p>
             <hr class="d-sm-none">
         </div>
