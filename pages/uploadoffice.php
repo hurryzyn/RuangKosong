@@ -47,7 +47,7 @@ if (isset($_POST['btnSubmit'])) {
         <table class="table">
             <div class="mb-3">
                 <label class="form-label">ID Gedung</label>
-                <input type="text" class="form-control border border-2 border-black" name="id_gedung" value="<?php echo $objOffice->id_gedung; ?>" required>
+                <input type="text" class="form-control border border-2 border-black" name="id_gedung"  readonly>
             </div>
             <div class="mb-3">
                 <label class="form-label">Nama Gedung</label>

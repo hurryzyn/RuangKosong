@@ -7,10 +7,10 @@ if(isset($_POST['btnSubmit'])){
     $objPengguna->ValidateEmail($inputemail);
 
     if($objPengguna->hasil){
-        echo "<script>alert('Email sudah terdaftar');</script>";
+        echo "<script>alert('berhasil mendaftar');</script>";
     } else {
         $objPengguna->email = $_POST["email"];
-        $password = $_POST['password']; // Menggunakan nilai password mentah
+        $password = $_POST['password']; 
         $objPengguna->password= password_hash($password, PASSWORD_DEFAULT);
         $objPengguna->nama = $_POST["nama"];
         $objPengguna->role = "user";

@@ -18,8 +18,8 @@ session_start();
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="dashboardadmin.php?p=overview" class="nav-link px-2 link-secondary text-white">Overview</a></li>
-          <li><a href="dashboardadmin.php?p=usercontrol" class="nav-link px-2 link-secondary text-white">Usercontrol</a></li>
-          <li><a href="dashboardadmin.php?p=office" class="nav-link px-2 link-secondary text-white">Office</a></li>
+          <<a class="nav-link link-secondary text-light fw-bolder" href="index.php?p=home">Home</a>
+          <a class="nav-link link-secondary text-light fw-bolder" href="index.php?p=officespace">Office Space</a>
         </ul>
 
 
@@ -39,7 +39,7 @@ session_start();
 
   <main class="container">
     <?php
-    $page_dir = 'pagesadmin';
+    $page_dir = 'pagesuser';
     if (!empty($_GET['p'])) {
 
       $page = scandir($page_dir, 0);
@@ -52,7 +52,7 @@ session_start();
         echo 'Halaman tidak ditemukan! :(';
       }
     } else {
-      include "pagesadmin/overview.php";
+      include "pagesuser/profil.php";
     }
     ?>
   </main>

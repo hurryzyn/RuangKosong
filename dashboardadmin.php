@@ -4,12 +4,12 @@ require_once('./class/class.user.php');
 require_once('./class/class.book.php');
 
 if (!isset($_SESSION)) {
-  session_start();
-}
+//   session_start();
+// }
 
-if ($_SESSION["role"] != "admin") {
-  session_destroy();
-  echo '<script>window.location = "index.php";</script>';
+// if ($_SESSION["role"] != "admin") {
+//   session_destroy();
+//   echo '<script>window.location = "index.php";</script>';
 }
 
 $tableContent = '';
@@ -62,8 +62,8 @@ if ($selectedMenu == "home"){
   }
 } else {
   $title = "Book List";
-  $book = new Book();
-  $allBookData = $book->getAllBook();
+  $book = new Booking();
+  $allBookData = $booking->getBooking();
   while ($row = $allBookData->fetch_row())  {
     $currentData = '<tr>
       <td>' . $row[0] . '</td>

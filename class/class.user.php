@@ -61,4 +61,20 @@ class User extends Connection
 
         return $result;
     }
+
+    public function getOneUser()
+{
+    $sql = "SELECT * FROM user WHERE userid='$this->userid'";
+    $resultOne = mysqli_query($this->connection, $sql);
+    if (mysqli_num_rows($resultOne) == 1) {
+        $this->hasil = true;
+        $data = mysqli_fetch_assoc($resultOne);
+        $this->userid = $data['userid'];
+        $this->email = $data['email'];
+        $this->password = $data['password'];
+        $this->nama = $data['nama'];
+        $this->role = $data['role'];
+    }
+}
+
 }

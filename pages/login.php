@@ -16,11 +16,11 @@ if(isset($_POST["btnSubmitLogin"])){
                 $_SESSION["nama"]= $objPengguna->nama;
                 $_SESSION["email"]= $objPengguna->email;
                 if($objPengguna->role == "user"){
-                    echo '<script>window.location = "index.php?p=dashboarduser";</script>';
+                    echo '<script>window.location = "dashboarduser.php";</script>';
                 } else if ($objPengguna->role == "admin"){
                     echo '<script>window.location = "dashboardadmin.php?row=home";</script>';
                 } else {
-                    echo '<script>window.location = "index.php?p=dashboarduser";</script>';
+                    echo '<script>window.location = "dashboarduser.php";</script>';
                 }
 
             } else {
