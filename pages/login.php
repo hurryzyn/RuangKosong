@@ -1,38 +1,35 @@
 <?php
 require_once('./class/class.user.php');
 
-if (isset($_SESSION["userid"])) {
-    // Redirect ke dashboarduser jika sudah login
-    header("Location: index.php?p=dashboarduser");
-    exit();
-}
-
-if(isset($_POST["btnSubmit"])){
-    if(isset($_POST["email"])){
-        $inputemail = $_POST["email"];
+if(isset($_POST["btnSubmitLogin"])){
+    if(isset($_POST["emailLogin"])){
+        $inputemail = $_POST["emailLogin"];
         $objPengguna = new User();
         $objPengguna->ValidateEmail($inputemail);
-        echo "post pass" . $_POST["password"] . "<br>";
-        echo "obj pass" . $objPengguna->password . "<br>" ;
-        if($objPengguna->hasil && isset($_POST["password"])){
+        $password = $_POST["passwordLogin"];
+
+        if($objPengguna->hasil && isset($_POST["passwordLogin"])){
             $ismatch = password_verify($password, $objPengguna->password);
-            echo "ismatch" . $ismatch . "<br>" ;
             if($ismatch){
-                echo "<script>alert('success');</script>";
-                $_POST["btnSubmit"] = 0;
-                $_POST["email"] = 0;
-                $_POST["password"] = 0;
+                $_SESSION["userid"]= $objPengguna->userid;
+                $_SESSION["role"]= $objPengguna->role;
+                $_SESSION["nama"]= $objPengguna->nama;
+                $_SESSION["email"]= $objPengguna->email;
+                if($objPengguna->role == "user"){
+                    echo '<script>window.location = "index.php?p=dashboarduser";</script>';
+                } else if ($objPengguna->role == "admin"){
+                    echo '<script>window.location = "dashboardadmin.php?row=home";</script>';
+                } else {
+                    echo '<script>window.location = "index.php?p=dashboarduser";</script>';
+                }
+
             } else {
                 echo "<script>alert('Email atau password Anda salah!');</script>";
-                $_POST["btnSubmit"] = 0;
-                $_POST["email"] = 0;
-                $_POST["password"] = 0;
             }
         } 
-    }
     
+    }
 }
-
 
 
 // require_once('./class/class.User.php');
@@ -81,13 +78,13 @@ if(isset($_POST["btnSubmit"])){
                     <form action="" method="post">
                         <div class="p-3">
                             <div class="mb-3">
-                                <input type="email" class="form-control" id="email" name= "email" aria-describedby="emailHelp" placeholder="Enter your email">
+                                <input type="email" class="form-control" id="email" name= "emailLogin" aria-describedby="emailHelp" placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                                <input type="password" class="form-control" id="password" name="passwordLogin" placeholder="Enter your password">
                             </div>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" type="submit" name="btnSubmit">Log In</button>
+                                <button class="btn btn-primary" type="submit" name="btnSubmitLogin">Log In</button>
                                 <div class="form-text text-center">Not have an account?</div>
                                 <a class="btn btn-secondary" href="index.php?p=register">Register</a>
                             </div>

@@ -1,5 +1,8 @@
 <?php
 require "inc.koneksi.php";
+if (!isset($_SESSION)) {
+  session_start();
+}
 
 $title = "Home";
 if (!empty($_GET['p'])) {
@@ -9,8 +12,8 @@ if (!empty($_GET['p'])) {
 $authButton = '<a href="index.php?p=login"> <button type="button" class="btn btn-outline-light me-2">Login</button></a>
 <a href="index.php?p=register"><button type="button" class="btn btn-warning">Sign-up</button></a>';
 
-if (isset($_SESSION) && ($_SESSION["role"] == "user")){
-  $authButton = '<a href="index.php?p=register"><button type="button" class="btn btn-warning">logout</button></a>';
+if (isset($_SESSION) && isset($_SESSION["role"]) && ($_SESSION["role"] == "user")){
+  $authButton = '<a href="index.php?p=logout"><button type="button" class="btn btn-warning">logout</button></a>';
 }
 
 ?>
@@ -116,3 +119,9 @@ if (isset($_SESSION) && ($_SESSION["role"] == "user")){
 </body>
 
 </html>
+<?php
+
+$_POST["btnSubmitLogin"] = null;
+$_POST["emailLogin"] = null;
+$_POST["passwordLogin"] = null;
+?>

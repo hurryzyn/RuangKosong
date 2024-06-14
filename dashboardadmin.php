@@ -3,6 +3,15 @@ require_once('./inc.koneksi.php');
 require_once('./class/class.user.php');
 require_once('./class/class.book.php');
 
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+if ($_SESSION["role"] != "admin") {
+  session_destroy();
+  echo '<script>window.location = "index.php";</script>';
+}
+
 $tableContent = '';
 $homeHeaderTable = '<tr>
   <th scope="col-1">User Id</th>
@@ -39,7 +48,7 @@ if ($selectedMenu == "home"){
       <td>' . $row[4] . '</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="#" class="btn btn-primary btn-sm">
+          <a href="dashboardadmin.php?page=editbook&id=" class="btn btn-primary btn-sm">
             <img src="./icons/edit.png" style="width: 20px" />
           </a>
           <a href="#" class="btn btn-primary btn-sm">
@@ -81,6 +90,8 @@ if ($selectedMenu == "home"){
 if (!empty($_GET['page'])) {
   $title = $_GET['page'];
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -155,6 +166,11 @@ if (!empty($_GET['page'])) {
                       Office Space
                     </a>
                   </li>
+                  <li class="w-100">
+                    <a href="dashboardadmin.php?page=logout" class="nav-link px-0">
+                      Log Out
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -219,9 +235,9 @@ if (!empty($_GET['page'])) {
           <div class="container">
           <?php
             $page_dir = 'pagesadmin';
-            if (!empty($_GET['page'])) {
+            if (!empty($_GET['page'])) { 
               // NOTE: SEBELUM BIKIN FILE BARU, DAFTARIN NAMA FILE DISINI
-              $adminPages = ["addbook","editbook"];
+              $adminPages = ["addbook","editbook", "logout"];
               $pageName = $_GET['page'];
               if (in_array($pageName, $adminPages)) {
                 require_once("./pagesadmin/". $pageName . ".php");
@@ -247,3 +263,9 @@ if (!empty($_GET['page'])) {
     ></script>
   </body>
 </html>
+<?php
+
+$_POST["btnSubmitLogin"] = null;
+$_POST["emailLogin"] = null;
+$_POST["passwordLogin"] = null;
+?>
